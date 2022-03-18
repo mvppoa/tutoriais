@@ -16,7 +16,7 @@ public class MediumEscrevendoStringsJavaMultilinha {
      */
     private static final String SEPARADOR_DE_LINHAS = System.getProperty("line.separator");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         blocoDeTexto();
         concatenacaoPorConcat();
         concatenacaoOperadorMais();
@@ -24,6 +24,7 @@ public class MediumEscrevendoStringsJavaMultilinha {
         testeStringBuilder();
         testeStringWriter();
         testeGoogleGuava();
+        carregarStringDeArquivo();
     }
 
     /**
@@ -105,8 +106,8 @@ public class MediumEscrevendoStringsJavaMultilinha {
     /**
      * Carregar string de arquivo
      */
-    public String carregarStringDeArquivo() throws IOException {
-        return new String(Files.readAllBytes(
-                Paths.get("src/main/resources/stringLonga.txt")));
+    public static void carregarStringDeArquivo() throws IOException {
+        System.out.println(new String(Files.readAllBytes(
+                Paths.get("src/main/resources/stringLonga.txt"))));
     }
 }
